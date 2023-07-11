@@ -7,29 +7,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <%-- <%
-    	Cookie [] allc = request.getCookies();
-    	if(allc != null)
-    	{
-    		for(Cookie c: allc)
-    		{
-    			if(c.getName().equals("loginerror"))
-    				out.println("<p> "+ c.getValue() + " </p>");
-    		}
-    	}
-    %> --%>
-    
-    ${cookie.loginerror.value}
-	<form action="http://localhost:8080/ShoppingApp/logincheck" method="post">
-		Enter uid : <input type="text" name="uid" /> 
-		<br/>
-		Enter pwd : <input type="password" name="pwd" />
-		<br/>
-		<input type="submit" value="LOGIN" />
-		<input type="reset" value="CLEAR" /> 
-	</form>
-	
-	<br/>
-	<a href="http://localhost:8080/ShoppingApp/register.html"> New User, Register here </a>
+<%
+  Cookie [] allc=request.getCookies();
+  if(allc !=null)
+  {
+	  for(Cookie c:allc)
+	  {
+		  if(c.getName().equals("myerror"))
+		  {
+			  out.println("<p>"+c.getValue()+"</p>");
+		  }
+	  }
+  }
+%>
+<form action="http://localhost:8080/ShoppingApp/logincheckdb" method="post">
+   Enter uid:<input type="text" name="uid">
+   <br>
+   Enter password:<input type="password" name="pass">
+   <br>
+   <input type="submit" value="Login">
+   <input type="reset" value="Clear">
+   </form>
 </body>
 </html>

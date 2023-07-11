@@ -7,14 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:useBean id="user" class="beans.User" scope="request" />
-	<h1> Welcome <jsp:getProperty property="fname" name="user"/>
-		<jsp:getProperty property="lname" name="user"/>
-	</h1>
-	Email : <jsp:getProperty property="email" name="user"/>
-	<br/>
-	Age : <jsp:getProperty property="age" name="user"/>
-	<br/>
-	City : ?
+    <jsp:useBean id="user" class="bean.User" scope="request"/>
+    <h1>Welcome <jsp:getProperty property="fname" name="user"/>
+      <jsp:getProperty property="lname" name="user"/>
+    </h1>
+    
+    Email: <jsp:getProperty property="email" name="user"/>
+    <br>
+    Age:<jsp:getProperty property="age" name="user"/>
+    
+    
 </body>
 </html>

@@ -1,80 +1,75 @@
 package entities;
 
 public class User {
-	private String uid,pwd,fname,mname,lname,email,contact;
 
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+  private String uid,password,fname,mname,lname,email,contact;
 
-	public User(String uid, String pwd, String fname, String mname, String lname, String email, String contact) {
-		super();
-		this.uid = uid;
-		this.pwd = pwd;
-		this.fname = fname;
-		this.mname = mname;
-		this.lname = lname;
-		this.email = email;
-		this.contact = contact;
-	}
+public User(String uid, String password, String fname, String mname, String lname, String email, String contact) {
+	super();
+	this.uid = uid;
+	this.password = password;
+	this.fname = fname;
+	this.mname = mname;
+	this.lname = lname;
+	this.email = email;
+	this.contact = contact;
+}
 
-	public String getUid() {
-		return uid;
-	}
+public String getUid() {
+	return uid;
+}
 
-	public void setUid(String uid) {
-		this.uid = uid;
-	}
+public void setUid(String uid) {
+	this.uid = uid;
+}
 
-	public String getPwd() {
-		return pwd;
-	}
+public String getPassword() {
+	return password;
+}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
-	}
+public void setPassword(String password) {
+	this.password = password;
+}
 
-	public String getFname() {
-		return fname;
-	}
+public String getFname() {
+	return fname;
+}
 
-	public void setFname(String fname) {
-		this.fname = fname;
-	}
+public void setFname(String fname) {
+	this.fname = fname;
+}
 
-	public String getMname() {
-		return mname;
-	}
+public String getMname() {
+	return mname;
+}
 
-	public void setMname(String mname) {
-		this.mname = mname;
-	}
+public void setMname(String mname) {
+	this.mname = mname;
+}
 
-	public String getLname() {
-		return lname;
-	}
+public String getLname() {
+	return lname;
+}
 
-	public void setLname(String lname) {
-		this.lname = lname;
-	}
+public void setLname(String lname) {
+	this.lname = lname;
+}
 
-	public String getEmail() {
-		return email;
-	}
+public String getEmail() {
+	return email;
+}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+public void setEmail(String email) {
+	this.email = email;
+}
 
-	public String getContact() {
-		return contact;
-	}
+public String getContact() {
+	return contact;
+}
 
-	public void setContact(String contact) {
-		this.contact = contact;
-	}
-	
-	
-
+public void setContact(String contact) {
+	this.contact = contact;
+}
+  
+  
 }

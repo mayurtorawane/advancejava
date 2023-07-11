@@ -37,12 +37,15 @@ public class GetProductServlet extends HttpServlet {
 		   String cid=request.getParameter("cid");
 		   ps.setString(1, cid);
 		   rs=ps.executeQuery();
-		   out.print("<select name=category>");
+		   out.print("<form action='addtocard' method='get'>");
+		   out.print("<select name='category'>");
 		   while(rs.next())
 		   {
-			   out.println("<option value="+rs.getString(2)+">"+rs.getString(2)+"</option>");
+			   out.println("<option value="+rs.getInt(1)+">"+rs.getString(2)+"</option>");
 		   }
 		   out.print("</select>");
+		   out.print("<br/> <input type='submit' value='Add To Cart' />");
+		   out.print("</form>");
 		}
 		catch (Exception e) {
 	      e.printStackTrace();

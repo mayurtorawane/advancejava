@@ -10,9 +10,13 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import entities.User;
 
 
 @WebServlet("/logincheckdb")
@@ -53,15 +57,38 @@ PrintWriter out=response.getWriter();
 			{
 			if(rs.getString(1).equals(uid) && rs.getString(2).equals(pass))
 			{
+				Cookie [] allc=request.getCookies();
+				if(allc != null)
+				{
+				   for(Cookie c:allc)
+				   {
+					   if(c.getName().equals("myerror"))
+					   {
+						   c.setMaxAge(0);
+						  response.addCookie(c);
+					   }
+				   }
+				}
+				
+				
+				User user=new User(rs.getString(1),rs.getString(2) ,rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7));
+				
+				HttpSession session=request.getSession();
+				session.setAttribute("loginuser", user);
+				
 				RequestDispatcher rd=request.getRequestDispatcher("/home");
 				rd.forward(request, response);
-				//out.println("sjbdjs");
+				
 			}
 			}
 			else
 			{
 				//response.sendRedirect("Login.html");
-				out.println("fail");
+				//out.println("fail");
+				
+				Cookie c=new Cookie("myerror","Wrong_UID/Pwd");
+				response.addCookie(c);
+				response.sendRedirect("Login.jsp");
 			}
 			
 		}

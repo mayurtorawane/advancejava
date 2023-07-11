@@ -9,24 +9,33 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  
   <context-param>
-  	<param-name>diverclass</param-name>
-  	<param-value>com.mysql.cj.jdbc.Driver</param-value>
+     <param-name>driverclass</param-name>
+     <param-value>com.mysql.cj.jdbc.Driver</param-value>
   </context-param>
   
   <context-param>
-  	<param-name>jdbcurl</param-name>
-  	<param-value>jdbc:mysql://localhost:3306/shoppingdb</param-value>
+      <param-name>jdbcurl</param-name>
+     <param-value>jdbc:mysql://localhost:3306/shoppingdb</param-value>
   </context-param>
   
   <context-param>
-  	<param-name>user</param-name>
-  	<param-value>root</param-value>
+      <param-name>jdbcurlq</param-name>
+     <param-value>jdbc:mysql://localhost:3306/quizdb</param-value>
   </context-param>
   
   <context-param>
-  	<param-name>password</param-name>
-  	<param-value>root</param-value>
+      <param-name>jdbcurl1</param-name>
+     <param-value>jdbc:mysql://localhost:3306/dac</param-value>
+  </context-param>
+  
+   <context-param>
+      <param-name>user</param-name>
+     <param-value>root</param-value>
+  </context-param>
+  
+   <context-param>
+      <param-name>password</param-name>
+     <param-value>root</param-value>
   </context-param>
 </web-app>
